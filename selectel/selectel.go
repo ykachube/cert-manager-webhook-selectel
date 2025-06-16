@@ -31,7 +31,7 @@ type Config struct {
 	BaseURL           string            `json:"baseUrl"     validate:"required,gt=0"`
 	TTL               int               `json:"ttl"         validate:"required"`
 	HTTPTimeout       int               `json:"httpTimeout" validate:"required"`
-	AuthRegion        string         	`json:"AuthRegion"`    
+	AuthRegion        string         	`json:"authRegion"`    
 	AuthURL           string            `json:"authUrl"`    
 	CredentialsForDNS CredentialsForDNS `json:"-"`
 }
@@ -62,7 +62,7 @@ func NewConfigForDNS() (*Config, error) {
 		BaseURL:     defaultBaseURL,
 		TTL:         minTTL,
 		HTTPTimeout: defaultHTTPTimeout,
-		AuthRegion: "uz-1"
+		AuthRegion: "uz-1",
 		AuthURL:     "https://cloud.api.selcloud.ru/identity/v3", 
 	}
 
